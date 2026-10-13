@@ -20,7 +20,6 @@ const EYES = {
   left: { x: 49, y: 27, size: 7 }, // ← size adjusts this eye's width
   right: { x: 63, y: 30, size: 7 },
 };
-const NOSE = { x: 50, y: 52 };
 const MOUTH = { x: 45, y: 40 };
 const TONGUE = { w: 45, h: 65 }; // ← px — width & height of tongue
 const EARS = {
