@@ -372,13 +372,34 @@ export default function ImageFace({ onSmash }: { onSmash?: () => void }) {
           )}
         </AnimatePresence>
 
-        {/* Debug toggle */}
-        <button
-         
-          className="absolute right-2 top-2 z-50 rounded-full bg-black/50 px-2 py-1 text-[10px] text-white backdrop-blur-sm"
+        {/* ── CLICK ME / BONK ME indicator (no background) ────────────── */}
+        <motion.div
+          className="pointer-events-none absolute -top-2 left-1/2 z-[70] -translate-x-1/2"
+          animate={{
+            y: [0, -6, 0],
+            rotate: [-4, 4, -4],
+          }}
+          transition={{
+            duration: 1.6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
         >
-         
-        </button>
+          <motion.div
+            animate={{
+              scale: [1, 1.08, 1],
+            }}
+            transition={{
+              duration: 1.2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="relative flex items-center gap-1 font-display text-sm font-black tracking-tight text-white drop-shadow-[2px_2px_0_rgba(0,0,0,0.9)] sm:text-base"
+          >
+            <span className="text-base sm:text-lg">👆</span>
+            <span>BONK ME!</span>
+          </motion.div>
+        </motion.div>
 
         <button
           onClick={poke}
@@ -544,8 +565,6 @@ export default function ImageFace({ onSmash }: { onSmash?: () => void }) {
                   />
                 )}
               </AnimatePresence>
-
-              
             </motion.div>
           </motion.div>
         </button>
