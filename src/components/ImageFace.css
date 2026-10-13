@@ -1,0 +1,36 @@
+@keyframes bonk {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(-24px) scale(1.4);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-48px) scale(0.8);
+  }
+}
+
+.bonk {
+  animation: bonk 0.8s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes hitShake {
+  0%   { transform: scale(1) rotate(0deg); }
+  20%  { transform: scale(1.05) rotate(2deg); }
+  40%  { transform: scale(0.98) rotate(-2deg); }
+  60%  { transform: scale(1.02) rotate(1deg); }
+  80%  { transform: scale(0.99) rotate(-1deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.face-hit {
+  animation: hitShake 0.3s ease-in-out;
+}
+
+.face-idle {
+  transition: transform 0.1s;
+}
